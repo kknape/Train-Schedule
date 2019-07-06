@@ -18,7 +18,16 @@
 
     <!--JQuery framework-->
     <script src="https://code.jquery.com/jquery.js"></script>
+
+    <!-- Added Moment JS framework-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+
+
+    <!-- Firebase References -->
+        <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
 </head>
+
 <body>
 <div class="container">
     <div class="row">
@@ -38,7 +47,7 @@
                             </div>
                     </div>
                     <div class="card-body">
-                        <table class="table">
+                        <table class="table" id="trainTable">
                             <thead>
                                 <th scope="col">Train Name
                                     </th>
@@ -52,7 +61,10 @@
                                     </th>
                             </thead>  
                         <tbody>
-                            <tr>
+
+
+
+                      <!---      <tr>
                                 <td>Clarksville Express</td>
                                 <td>Clarksville</td>
                                 <td>[train frequency]</td>
@@ -101,7 +113,7 @@
                                 <td>[train frequency]</td>
                                 <td>[next arrival]</td>
                                 <td>[minutes away]</td>
-                            </tr>                           
+                            </tr>    -->                      
                          </tbody>
                         </table>
 
@@ -120,31 +132,31 @@
                             <form>
                             <div class="row">
                                 <div class="col-12 form-group">
-                                    <label for="trainName">Train Name</label>
-                                    <input type="text" class="form-control" id="trainName" aria-describedby="trainName">
+                                    <label for="tName">Train Name</label>
+                                    <input type="text" class="form-control" id="tName" aria-describedby="tName">
                                 </div>
                             </div>
                             <div class="row">
                                     <div class="col-12 form-group">
-                                            <label for="destination">Destination</label>
-                                            <input type="text" class="form-control" id="destination" aria-describedby="destination">
+                                            <label for="tDes">Destination</label>
+                                            <input type="text" class="form-control" id="tDes" aria-describedby="tDes">
                                     </div>
                             </div>
                             <div class="row">
                                     <div class="col-12 form-group">
-                                            <label for="trainTime">First Train Time (HHmm - military time)</label>
-                                            <input type="text" class="form-control" id="trainTime" aria-describedby="trainTime">
+                                            <label for="tFisrtTime">First Train Time (HHmm - military time)</label>
+                                            <input type="text" class="form-control" id="tFisrtTime" aria-describedby="tFisrtTime">
                                     </div>
                             </div>        
                             <div class="row">
                                     <div class="col-12 form-group">    
-                                            <label for="frequency">Frequency (min)</label>
-                                            <input type="text" class="form-control" id="frequency" aria-describedby="frequency">
+                                            <label for="tFreq">Frequency (min)</label>
+                                            <input type="text" class="form-control" id="tFreq" aria-describedby="tFreq">
                                     </div>
                              </div>
                             <div class="row">
                                     <div class="col-12">
-                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                    <button type="submit" class="btn btn-primary" id="addTrainBtn">Submit</button>
                                     </div>
                             </div>
                         </form>
@@ -153,6 +165,7 @@
     </div>
 
 </div> <!--end of container div-->
-
+  <!-- JavaScript -->
+<script src="assets/javascript/scripts.js"></script>
 </body>
 </html>
