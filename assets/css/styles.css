@@ -1,0 +1,17 @@
+/*My CSS file*/
+
+.myHeader {
+    text-align: center;
+    width: auto;
+    margin: 20px 0px 20px 0px;
+    background-color: rgb(151, 151, 246);
+}
+
+.myCardHeader {
+    background-color: rgb(151, 151, 246);
+}
+
+.myHeaderRow {
+  font-style: em;
+
+}

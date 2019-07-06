@@ -1,0 +1,158 @@
+<!--my index file -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Train Schedule</title>
+
+    <!---BOOTSTRAP framework-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+     
+        <!--My Style Sheet-->   
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <!--JQuery framework-->
+    <script src="https://code.jquery.com/jquery.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="jumbotron myHeader">
+                <h1 class="display-4">The Last Train to Paradise</h1>
+                <p class="lead">Check the schedule and grab your seat!</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row">
+            <div class="col-12">
+                    <div class="card">
+                            <div class="card-header myCardHeader">
+                              Current Train Schedule
+                            </div>
+                    </div>
+                    <div class="card-body">
+                        <table class="table">
+                            <thead>
+                                <th scope="col">Train Name
+                                    </th>
+                                <th scope="col">Destination
+                                    </th>                                    
+                                <th scope="col">Frequency (min)
+                                    </th>
+                                <th scope="col">Next Arrival
+                                    </th>
+                                <th scope="col">Minutes Away
+                                    </th>
+                            </thead>  
+                        <tbody>
+                            <tr>
+                                <td>Clarksville Express</td>
+                                <td>Clarksville</td>
+                                <td>[train frequency]</td>
+                                <td>[next arrival]</td>
+                                <td>[minutes away]</td>
+                            </tr>
+                            <tr>
+                                <td>Polar Express</td>
+                                <td>The North Pole</td>
+                                <td>[train frequency]</td>
+                                <td>[next arrival]</td>
+                                <td>[minutes away]</td>
+
+                            </tr>
+                            <tr>
+                                <td>Hooterville Cannonball</td>
+                                <td>Petticoat Junction</td>
+                                <td>[train frequency]</td>
+                                <td>[next arrival]</td>
+                                <td>[minutes away]</td>
+                            </tr>
+                            <tr>
+                                <td>The Darjeeling Limited</td>
+                                <td>Darjeeling, India</td>
+                                <td>[train frequency]</td>
+                                <td>[next arrival]</td>
+                                <td>[minutes away]</td>
+                            </tr>
+                            <tr>
+                                <td>Silver Streak</td>
+                                <td>Chicago</td>
+                                <td>[train frequency]</td>
+                                <td>[next arrival]</td>
+                                <td>[minutes away]</td>
+                            </tr>
+                            <tr>
+                                <td>Hogwarts Express</td>
+                                <td>Hogsmeade Station</td>
+                                <td>[train frequency]</td>
+                                <td>[next arrival]</td>
+                                <td>[minutes away]</td>
+                            </tr>
+                            <tr>
+                                <td>Little Engine</td>
+                                <td>Pike's Peak</td>
+                                <td>[train frequency]</td>
+                                <td>[next arrival]</td>
+                                <td>[minutes away]</td>
+                            </tr>                           
+                         </tbody>
+                        </table>
+
+
+                    </div>
+
+            </div>
+    </div>
+
+    <div class="row">
+            <div class="col-12">
+                    <div class="card">       
+                        <div class="card-header myCardHeader">Add a Train</div>      
+                    </div>
+                    <div class="card-body">
+                            <form>
+                            <div class="row">
+                                <div class="col-12 form-group">
+                                    <label for="trainName">Train Name</label>
+                                    <input type="text" class="form-control" id="trainName" aria-describedby="trainName">
+                                </div>
+                            </div>
+                            <div class="row">
+                                    <div class="col-12 form-group">
+                                            <label for="destination">Destination</label>
+                                            <input type="text" class="form-control" id="destination" aria-describedby="destination">
+                                    </div>
+                            </div>
+                            <div class="row">
+                                    <div class="col-12 form-group">
+                                            <label for="trainTime">First Train Time (HHmm - military time)</label>
+                                            <input type="text" class="form-control" id="trainTime" aria-describedby="trainTime">
+                                    </div>
+                            </div>        
+                            <div class="row">
+                                    <div class="col-12 form-group">    
+                                            <label for="frequency">Frequency (min)</label>
+                                            <input type="text" class="form-control" id="frequency" aria-describedby="frequency">
+                                    </div>
+                             </div>
+                            <div class="row">
+                                    <div class="col-12">
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                    </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+    </div>
+
+</div> <!--end of container div-->
+
+</body>
+</html>
