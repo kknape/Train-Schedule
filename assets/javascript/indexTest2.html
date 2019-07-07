@@ -1,0 +1,40 @@
+<html>
+<head>
+    <script>
+        function myFunction() {
+            let inputFields = document.getElementsByClassName('formInput');
+            let message =''; 
+            for (var i = 0; i < inputFields.length; i++) {
+                console.log(inputFields[i].value);
+                if (inputFields[i].value === '') {
+                        message = message + inputFields[i].getAttribute('name') + ', ';
+                }
+            }
+
+            let n = message.lastIndexOf(",");
+            message = message.substring(0,n); 
+
+            document.querySelector('#fail-message').innerHTML =
+                'Please fill out ' +
+                message +
+                ' field(s)';
+        }
+    </script>
+</head>
+
+<body>
+    <label>Name</label>
+    <input class="formInput" name="name" />
+
+    <label>Email</label>
+    <input class="formInput" name="email" />
+
+    <label>Message</label>
+    <textarea class="formInput" name="message"> </textarea>
+
+    <button onclick="myFunction()">Submit</button>
+
+    <span id="fail-message"></span>
+</body>
+
+</html>
