@@ -1,17 +1,35 @@
 /*My CSS file*/
 
+.myContainer {
+ border: 1px solid rgb(151, 151, 246);
+}
+
 .myHeader {
     text-align: center;
     width: auto;
     margin: 20px 0px 20px 0px;
     background-color: rgb(151, 151, 246);
+    font-family: 'Archivo Black', sans-serif;
 }
 
 .myCardHeader {
     background-color: rgb(151, 151, 246);
+    font-family: 'Candal', sans-serif;
+    font-size: 18pt;
 }
 
-.myHeaderRow {
-  font-style: em;
+.myTHead {
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  font-size: 17pt;
+}
 
+.myTxt {
+  font-family: 'Source Sans Pro', sans-serif;
+  text-align: center;
+  font-size: 16pt;
+}
+
+.myFormLbl {
+  font-family: 'Roboto', sans-serif;
 }

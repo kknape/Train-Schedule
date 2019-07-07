@@ -19,8 +19,8 @@ var config = {
     
   var database = firebase.database();
   
-var nextTrain = undefined;
-var tMinutesTillTrain = undefined;
+  var nextTrain = undefined;
+  var tMinutesTillTrain = undefined;
 
 //Create a button to add a train
   $("#addTrainBtn").on("click", function(event) {
@@ -32,21 +32,16 @@ var tMinutesTillTrain = undefined;
     var tFreq = $("#tFreq").val().trim();
 
  function nextArrival(){
-      
       //First departure time
       var firstTimeConvert = moment(firstTrain, "HH:mm").subtract(1, "years");
-      console.log(firstTimeConvert);
 
       //Current time
       var currentTime = moment();
-      console.log("CURRENT TIME: " + moment(currentTime).format("hh:mm"));
 
       //Difference between times
       var diffTime = moment().diff(moment(firstTimeConvert), "minutes");
-      console.log("DIFFERENCE IN TIME: " + diffTime);
     }
  
-
     var newTrain = {
       train: train,
       destination: destination,
@@ -83,7 +78,7 @@ var tMinutesTillTrain = undefined;
         function nextArrival(){
             
           //First departure time
-          var firstTimeConvert = moment(firstTrain, "HH:mm").subtract(1, "years");
+          var firstTimeConvert = moment(firstTrain, "hh:mm").subtract(1, "years");
           console.log(firstTimeConvert);
 
           //Current time
@@ -118,10 +113,9 @@ var tMinutesTillTrain = undefined;
       var newRow = $("<tr>").append(
             $("<td>").text(train),
             $("<td>").text(tDes),
-            $("<td>").text(firstTrain),
             $("<td>").text(tFreq),
-            $("<td>").text(nextTrain),
-            $("<td>").text(tMinutesTillTrain),
+            $("<td>").text(moment(nextTrain).format("hh:mm a")),
+            $("<td>").text(tMinutesTillTrain + " min"),
       );
   
 //display new row of entries on the page

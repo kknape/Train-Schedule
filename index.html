@@ -7,29 +7,32 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Train Schedule</title>
 
-    <!---BOOTSTRAP framework-->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-     
+        <!---BOOTSTRAP framework-->
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        
+        <!--Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Archivo+Black|Candal|Roboto:700|Source+Sans+Pro&display=swap" rel="stylesheet">
+        
         <!--My Style Sheet-->   
-    <link rel="stylesheet" href="assets/css/styles.css">
+        <link rel="stylesheet" href="assets/css/styles.css">
 
-    <!--JQuery framework-->
-    <script src="https://code.jquery.com/jquery.js"></script>
+        <!--JQuery framework-->
+        <script src="https://code.jquery.com/jquery.js"></script>
 
-    <!-- Added Moment JS framework-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+        <!-- Added Moment JS framework-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 
 
-    <!-- Firebase References -->
-        <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+        <!-- Firebase References -->
+            <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+            <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
 </head>
 
 <body>
-<div class="container">
+<div class="container myContainer">
     <div class="row">
         <div class="col-12">
             <div class="jumbotron myHeader">
@@ -48,13 +51,11 @@
                     </div>
                     <div class="card-body">
                         <table class="table" id="trainTable">
-                            <thead>
+                            <thead class="myTHead">
                                 <th scope="col">Train Name
                                     </th>
                                 <th scope="col">Destination
                                     </th>                                    
-                                <th scope="col">First Train
-                                    </th>
                                 <th scope="col">Frequency (min)
                                     </th>
                                 <th scope="col">Next Arrival
@@ -62,7 +63,7 @@
                                 <th scope="col">Minutes Away
                                     </th>
                             </thead>  
-                        <tbody>
+                        <tbody class="myTxt">
 
                          </tbody>
                         </table>
@@ -78,33 +79,34 @@
                     <div class="card">       
                         <div class="card-header myCardHeader">Add a Train</div>      
                     </div>
-                    <div class="card-body">
-                            <form>
-                            <div class="row">
-                                <div class="col-12 form-group">
+            <div class="card-body">
+                            
+                    <form class="needs-validation" novalidate>
+                            <div class="form-row">
+                                <div class="col-12 form-group mb-3 myFormLbl">
                                     <label for="tName">Train Name</label>
-                                    <input type="text" class="form-control" id="tName" aria-describedby="tName">
+                                    <input type="text" class="form-control" id="tName" aria-describedby="tName" required>
                                 </div>
                             </div>
-                            <div class="row">
-                                    <div class="col-12 form-group">
+                            <div class="form-row">
+                                    <div class="col-12 form-group mb-3 myFormLbl">
                                             <label for="tDes">Destination</label>
-                                            <input type="text" class="form-control" id="tDes" aria-describedby="tDes">
+                                            <input type="text" class="form-control" id="tDes" aria-describedby="tDes" required>
                                     </div>
                             </div>
-                            <div class="row">
-                                    <div class="col-12 form-group">
+                            <div class="form-row">
+                                    <div class="col-12 form-group mb-3 myFormLbl">
                                             <label for="tFisrtTime">First Train Time (HHmm - military time)</label>
-                                            <input type="text" class="form-control" id="tFisrtTime" aria-describedby="tFisrtTime">
+                                            <input type="text" class="form-control" id="tFisrtTime" aria-describedby="tFisrtTime" required>
                                     </div>
                             </div>        
-                            <div class="row">
-                                    <div class="col-12 form-group">    
+                            <div class="form-row">
+                                    <div class="col-12 form-group mb-3 myFormLbl">    
                                             <label for="tFreq">Frequency (min)</label>
-                                            <input type="text" class="form-control" id="tFreq" aria-describedby="tFreq">
+                                            <input type="text" class="form-control" id="tFreq" aria-describedby="tFreq" required>
                                     </div>
                              </div>
-                            <div class="row">
+                            <div class="form-row">
                                     <div class="col-12">
                                     <button type="submit" class="btn btn-primary" id="addTrainBtn">Submit</button>
                                     </div>
