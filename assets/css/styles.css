@@ -1,121 +1,35 @@
+/*My CSS file*/
+
 .myContainer {
-    margin: 100px 100px 0px 100px;
-} 
+ border: 1px solid rgb(151, 151, 246);
+}
 
-.myTitle {
+.myHeader {
     text-align: center;
-    margin-bottom: 10px;
-    font-family: 'Monoton', cursive;
-    color: palevioletred;
-    font-size: 72pt;
-}
-.mySubTitle {
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 24pt;
-}
-#myInstructions{
- font-size: 16pt;
- text-align: center;
+    width: auto;
+    margin: 20px 0px 20px 0px;
+    background-color: rgb(151, 151, 246);
+    font-family: 'Archivo Black', sans-serif;
 }
 
-#timer{
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 42px;
-    
+.myCardHeader {
+    background-color: rgb(151, 151, 246);
+    font-family: 'Candal', sans-serif;
+    font-size: 18pt;
 }
 
-#timeLeft{
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 48px;
-    display: inline-block;
-    margin-left: 20px;
-  
+.myTHead {
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  font-size: 17pt;
 }
 
-.triviaQuestion {
-    font-size: 20pt;
-    padding: 10px 0px 5px 0px;
+.myTxt {
+  font-family: 'Source Sans Pro', sans-serif;
+  text-align: center;
+  font-size: 16pt;
 }
 
-.answerItems {
-    padding: 0px 10px 10px 5px;
-    margin: 0px 10px 10px 20px;
-    font: 24pt;
+.myFormLbl {
+  font-family: 'Roboto', sans-serif;
 }
-
-.answerInput {
-    margin: 10px 0px 0px 0px;
-}
-
-#allDone {
-    font-size: 56pt;
-    color: rgb(33, 33, 78);
-    text-align: center;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-style: em;
-}
-
-#correctA {
-    font-size: 36pt;
-    color: blue;
-}
-#incorrectA {
-    font-size: 24pt;
-    color: blue;
-}
-#unanswered {
-    font-size: 24pt;
-    color: grey;
-}
-.incorrectScore {
-    font-size: 16pt;
-}
-#start {
-    padding: 5px 5px 5px 5px;
-    margin: auto;
-    width: 250px;
-    height: 70px;
-    background-color: blueviolet;
-    border-style: outset;
-    border-color: rgb(38, 6, 68);
-    border-radius: 5px;
-    color: white;
-    font-size: 36pt;
-    line-height: 14pt;
-    font-family: 'Bungee', cursive;
-    cursor: pointer;
-    -webkit-transition-duration: 0.4s; /* Safari */
-    transition-duration: 0.4s;
-    cursor: pointer;
-    letter-spacing: 3px;
-    text-align: center;
-    justify-content: center;
-}
-
-#end, #replay {
-    padding: 5px 5px 5px 5px;
-    margin: 10px 10px 10px 10px;
-    width: 250px;
-    height: 70px;
-    background-color: rgb(49, 32, 65);
-    border-style: outset;
-    border-color: rgb(38, 6, 68);
-    border-radius: 5px;
-    color: white;
-    font-size: 36pt;
-    line-height: 14pt;
-    font-family: 'Bungee', cursive;
-    cursor: pointer;
-    letter-spacing: 3px;
-    text-align: center;
-    justify-content: center;
-    }
-
-    .button2:hover {
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
-    }
-
-    #bWrapper {
-     margin: auto;
-    }

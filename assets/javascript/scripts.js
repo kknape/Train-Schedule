@@ -1,6 +1,7 @@
 //Javascript file
 $(document).ready(function(){
 
+
 // Initialize Firebase
 var config = {
     apiKey: "AIzaSyD-MohMWjqWhNG4O9MxJzgNi3BrvIpYObg",
@@ -30,6 +31,17 @@ var config = {
     var firstTrain = $("#tFisrtTime").val().trim();
     var tFreq = $("#tFreq").val().trim();
 
+ function nextArrival(){
+      //First departure time
+      var firstTimeConvert = moment(firstTrain, "HH:mm").subtract(1, "years");
+
+      //Current time
+      var currentTime = moment();
+
+      //Difference between times
+      var diffTime = moment().diff(moment(firstTimeConvert), "minutes");
+    }
+ 
     var newTrain = {
       train: train,
       destination: destination,
@@ -112,4 +124,5 @@ var config = {
                 function(errorObject) {
                   console.log("The read failed: " + errorObject.code);
                 });
-});
+
+  });

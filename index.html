@@ -1,49 +1,123 @@
+<!--my index file -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Trivia Time</title>
-    <!--my css-->  
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <!--bootstrap framework-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Bungee|Monoton&display=swap" rel="stylesheet">    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <title>Train Schedule</title>
 
-    <!--my css-->  
-    <link rel="stylesheet" href="assets/css/styles.css">
+        <!---BOOTSTRAP framework-->
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        
+        <!--Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Archivo+Black|Candal|Roboto:700|Source+Sans+Pro&display=swap" rel="stylesheet">
+        
+        <!--My Style Sheet-->   
+        <link rel="stylesheet" href="assets/css/styles.css">
 
-    <!--jquery framework-->
-    <script src="https://code.jquery.com/jquery.js"></script>
+        <!--JQuery framework-->
+        <script src="https://code.jquery.com/jquery.js"></script>
+
+        <!-- Added Moment JS framework-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+
+
+        <!-- Firebase References -->
+            <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+            <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
 </head>
 
 <body>
-<div class="container">
-    <div class="jumbotron myContainer">
-        <div class="display-4 myTitle">Trivia Time</div>
-        <h2 class="mySubTitle">1980s Movies</h2>
-        <div id="insText">
-        <p class="lead" id="myInstructions">You have 60 seconds to see how many questions you can answer correctly.</p>
-          </div>
-        <hr class="my-4">
-        
-        <div id="qWrapper">
-
-            <div class="row" id="bWrapper">
-                <div class="col-12-lg mx-auto">
-                    <button id="start" class="button2">Start</button>
-                </div>
+<div class="container myContainer">
+    <div class="row">
+        <div class="col-12">
+            <div class="jumbotron myHeader">
+                <h1 class="display-4">The Last Train to Paradise</h1>
+                <p class="lead">Check the schedule and grab your seat!</p>
             </div>
- 
-    </div> 
-
-    <!--end jumbotron container--> 
+        </div>
     </div>
-<!--end container-->
-</div>
-    <script src="assets/javascript/app.js"></script>
+    
+    <div class="row">
+            <div class="col-12">
+                    <div class="card">
+                            <div class="card-header myCardHeader">
+                              Current Train Schedule
+                            </div>
+                    </div>
+                    <div class="card-body">
+                        <table class="table" id="trainTable">
+                            <thead class="myTHead">
+                                <th scope="col">Train Name
+                                    </th>
+                                <th scope="col">Destination
+                                    </th>                                    
+                                <th scope="col">Frequency (min)
+                                    </th>
+                                <th scope="col">Next Arrival
+                                    </th>
+                                <th scope="col">Minutes Away
+                                    </th>
+                            </thead>  
+                        <tbody class="myTxt">
+
+                         </tbody>
+                        </table>
+
+
+                    </div>
+
+            </div>
+    </div>
+
+    <div class="row">
+            <div class="col-12">
+                    <div class="card">       
+                        <div class="card-header myCardHeader">Add a Train</div>      
+                    </div>
+            <div class="card-body">
+                            
+                    <form class="needs-validation" novalidate>
+                            <div class="form-row">
+                                <div class="col-12 form-group mb-3 myFormLbl">
+                                    <label for="tName">Train Name</label>
+                                    <input type="text" class="form-control" id="tName" aria-describedby="tName" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                    <div class="col-12 form-group mb-3 myFormLbl">
+                                            <label for="tDes">Destination</label>
+                                            <input type="text" class="form-control" id="tDes" aria-describedby="tDes" required>
+                                    </div>
+                            </div>
+                            <div class="form-row">
+                                    <div class="col-12 form-group mb-3 myFormLbl">
+                                            <label for="tFisrtTime">First Train Time (HHmm - military time)</label>
+                                            <input type="text" class="form-control" id="tFisrtTime" aria-describedby="tFisrtTime" required>
+                                    </div>
+                            </div>        
+                            <div class="form-row">
+                                    <div class="col-12 form-group mb-3 myFormLbl">    
+                                            <label for="tFreq">Frequency (min)</label>
+                                            <input type="text" class="form-control" id="tFreq" aria-describedby="tFreq" required>
+                                    </div>
+                             </div>
+                            <div class="form-row">
+                                    <div class="col-12">
+                                    <button type="submit" class="btn btn-primary" id="addTrainBtn">Submit</button>
+                                    </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+    </div>
+
+</div> <!--end of container div-->
+  <!-- JavaScript -->
+<script src="assets/javascript/scripts.js"></script>
 </body>
 </html>
